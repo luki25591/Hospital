@@ -22,19 +22,23 @@ public class Hospital {
         this.person = person;
     }
 
-    public void addEmployee(Person persons){
-       if(getNumber()<MAX_EMPLOYEE) {
-           getPerson()[getNumber()] = persons;
-           setNumber(getNumber()+1);
-       }else {
-           System.out.println("Brak miejsca w bazie!");
-       }
+    public void addEmployee(Person persons) {
+        if (getNumber() < MAX_EMPLOYEE) {
+            getPerson()[getNumber()] = persons;
+            setNumber(getNumber() + 1);
+        } else {
+            System.out.println("Brak miejsca w bazie!");
+        }
     }
 
     @Override
     public String toString() {
         if(number == 0){
             System.out.println("Brak pracowników w bazie!");
+        }else{
+            System.out.println("Baza może przechowywać max " + person.length + " pracowników.");
+        }if(number != 0) {
+            System.out.println("Liczba pracowników w bazie: " + number);
         }
         String result = " ";
         for (int i = 0; i < number; i++) {
